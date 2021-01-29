@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Netfilx - Watch TV Shows Online, Watch Movies Online</title>
+  </head>
+  <body>
+    <header class="showcase">
+      <div class="showcase-top">
+        <img src="css/images/netflix.png" alt="Netfilx" />
+        <a href="#" class="btn btn-rounded">Sign In</a>
+      </div>
+      <div class="showcase-content">
+        <h1>See what's next</h1>
+        <p>Watch anywhere. Cancel anytime</p>
+        <a href="#" class="btn btn-xl">
+          Watch Free For 30 Days<i class="fas fa-chevron-right btn-icon"></i>
+        </a>
+      </div>
+    </header>
+    <section class="tabs">
+      <div class="container">
+        <div id="tab-1" class="tab-item tab-border">
+          <!--providing ids to each tab for
+             javascript access & giving same class to all the tabs for styling -->
+          <i class="fas fa-door-open fa-3x"></i>
+          <p class="hide-sm">Cancel anytime</p>
+          <!--hide-sm means it will disappear on a smaller screen onlt showing the icon -->
+        </div>
+        <div id="tab-2" class="tab-item">
+          <i class="fas fa-tablet-alt fa-3x"></i
+          ><!--the second tab-->
+          <p class="hide-sm">Watch anywhere</p>
+        </div>
+        <div id="tab-3" class="tab-item">
+          <i class="fas fa-tags fa-3x"></i>
+          <!--the third tab-->
+          <p class="hide-sm">Pick your price</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-content">
+      <!--tab-1 content-->
+      <div id="tab-1-content" class="tab-content-item show">
+        <!-- show class is for javascript-->
+        <div class="tab-1-content-inner">
+          <div>
+            <p class="text-lg">
+              If you decide Netfilx isn't for you - no problem. No commitment.
+              Cancel anytime.
+            </p>
+            <a href="#" class="btn btn-lg">Watch Free for 30 Days</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!--
+    grid only works to the immediate child of a class,
+    so it'll not work if we apply it on the tabs class, because its immediate child is container,
+    so we'll apply it to the container
+-->

@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #e50914; /*change total red background from here */
+  --dark-color: #141414;
+}
+* {
+  box-sizing: border-box; /*padding changes will not effect width*/
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased; /*vendor prefix*/
+  background: #000;
+  color: #999;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+p {
+  margin: 0.5rem 0; /*1rem = no pixels of font size of root element of html which is by default is 16px */
+}
+img {
+  width: 100%;
+}
+.showcase {
+  width: 100%;
+  height: 93vh; /*viewport height = means if 100% is the size of total window we are only using 93% for our image, this doesn't mean our image is not of 100% width*/
+  position: relative;
+  background: url("../css/images/showcase.jpg") no-repeat center center/cover; /* both x,y axis */
+}
+.showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /*full spanning*/
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6); /*transparent*/
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000; /* here we are giving shadow to every side, first left then right*/
+}
+.showcase-top {
+  position: relative; /*showcase top is made relative & the logo will be absolute */
+  z-index: 2; /*higher z-index closer the object*/
+  height: 90px;
+}
+
+.showcase-top img {
+  width: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%; /*top & left */
+  transform: translate(-50%, -50%); /* for up and left */
+}
+
+.showcase-top a {
+  position: absolute;
+  top: 50%; /*moving down */
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-content {
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  display: flex;
+  flex-direction: column; /*default is row*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+}
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  margin: 0 0 2rem;
+}
+/* tabs */
+.tabs {
+  background: var(--dark-color);
+  padding-top: 1rem;
+  border-bottom: 3px solid #3d3d3d; /*border for whole tabs section*/
+}
+.tabs .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* this means repeat 1 grid fraction 3 times */
+  grid-gap: 1rem;
+  align-items: center; /*these three properties are frequently used in css*/
+  justify-content: center;
+  text-align: center;
+}
+.tabs p {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.tabs .container > div {
+  padding: 1.5rem 0; /*targeting each div inside container & padding top&bottom */
+}
+.tabs .container > div:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.tab-border {
+  border-bottom: var(--primary-color) 4px solid; /*this is for fisrt tab only for now*/
+}
+/*containers */
+.container {
+  max-width: 70%; /*this actually makes website responsive, it'll only allow 70% of the browser no matter what size */
+  margin: auto;
+  overflow: hidden; /*this actually contains every prop inside the container class */
+  padding: 0 2rem; /*0 - top&bottom, 2rem - right&left */
+}
+
+/*buttons*/
+
+.btn {
+  display: inline-block;
+  background: var(
+    --primary-color
+  ); /*changes with the primary color defined above*/
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer; /* scalable coding (maybe used in other buttons) */
+  margin-right: 0.5rem; /*if buttons are in-line next to each other*/
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45); /*rgb-alpha here alpha is transarency*/
+  border-radius: 2px;
+}
+
+.btn:hover {
+  opacity: 0.9; /*not changing color only opacity*/
+}
+.btn-rounded {
+  border-radius: 5px;
+}
+
+.btn-xl {
+  font-size: 2rem; /* 32px */
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+
+.btn-lg {
+  font-size: 2rem; /* 32px */
+  padding: 0.8rem 2.1rem;
+  text-transform: uppercase;
+}
